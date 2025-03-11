@@ -1,0 +1,116 @@
+/* Css - Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+  font-family: Montserrat;
+  src: url("./src/Fonts/Montserrat-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  src: url("./src/Fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+
+/* Typescaling */
+h1 {
+  font-size: 5.613rem;
+  font-family: Montserrat;
+}
+h2 {
+  font-size: 4.206rem;
+  font-family: Montserrat;
+}
+h3 {
+  font-size: 3.156rem;
+  font-family: Montserrat;
+}
+h4 {
+  font-size: 2.369rem;
+  font-family: Roboto;
+}
+h5 {
+  font-size: 1.775rem;
+  font-family: Roboto;
+}
+h6 {
+
+  font-size: 1.331rem;
+  font-family: Roboto;
+}
+p {
+  font-size: 1rem;
+  font-family: Roboto;
+}
+small {
+  font-size: 0.75rem;
+  font-family: Roboto;
+}
+
+/* Variablen / Color */
+:root {
+  --color1: #373F51;
+  --color2: #D8DBE2;
+  --color3: #61E786;
+  --color4: #D81E5B;
+  --color5: #F19A3E;
+  --Color1Opa: ;
+  --realWhite: #fafafa;
+}
+
+/* Media - Queries */
+.container {
+  width: 95%;
+  padding-left: 1rem;
+  padding-right: 1;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid red;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 85px;
+  }
+  html {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1200px) {
+  container {
+    width: 80%;
+  }
+  html {
+    font-size: 1.15rem;
+  }
+}
+@media (min-width: 1400px) {
+  container {
+    width: 70%;
+  }
+  html {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1920px) {
+  container {
+    width: 60%;
+  }
+  html {
+    font-size: 1.3rem;
+  }
+}
