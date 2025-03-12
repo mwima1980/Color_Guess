@@ -37,7 +37,6 @@ h5 {
   font-family: Itim;
 }
 h6 {
-
   font-size: 1.414rem;
   font-family: Itim;
 }
@@ -52,12 +51,89 @@ small {
 
 /* Variablen / Color */
 :root {
-  --color1: #373F51;
-  --color2: #61E786;
-  --color3: #F19A3E;
-  --color4: #D81E5B;
-  --color5: #D8DBE2;
-  --Color6: #3F84E5;
+  --color1: #373f51;
+  --color2: #61e786;
+  --color3: #f19a3e;
+  --color4: #d81e5b;
+  --color5: #d8dbe2;
+  --Color6: #3f84e5;
+}
+
+.container-guess {
+  height: 100vh;
+  display: flex;
+  gap: 2rem;
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 60%;
+    .color-code {
+      background-color: var(--color1);
+      border-radius: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 4rem 4rem;
+    }
+    .top {
+      color: var(--color5);
+      text-align: center;
+    }
+    .timer {
+      color: var(--color5);
+      text-align: center;
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      span {
+        color: var(--color5);
+      }
+    }
+    .buttons-container {
+      background-color: var(--color1);
+      border-radius: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 4rem 4rem;
+      .buttons-container1 {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        button {
+          width: 8rem;
+          height: 8rem;
+          background-color: #ba5454;
+        }
+      }
+      .buttons-container2 {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        button {
+          width: 8rem;
+          height: 8rem;
+          background-color: #ba5454;
+        }
+      }
+      .buttons-container3 {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        button {
+          width: 8rem;
+          height: 8rem;
+          background-color: #ba5454;
+        }
+      }
+    }
+  }
+  .right-side {
+    border: 3px solid red;
+    width: 40%;
+  }
 }
 
 /* Media - Queries */
