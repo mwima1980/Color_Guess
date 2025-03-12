@@ -7,66 +7,64 @@
 
 /* Fonts */
 @font-face {
-  font-family: Montserrat;
-  src: url("./src/Fonts/Montserrat-Regular.ttf") format("truetype");
+  font-family: IrishGrover;
+  src: url("./src/Fonts/IrishGrover-Regular.ttf") format("truetype");
 }
 @font-face {
-  font-family: Roboto;
-  src: url("./src/Fonts/Roboto-Regular.ttf") format("truetype");
+  font-family: Itim;
+  src: url("./src/Fonts/Itim-Regular.ttf") format("truetype");
 }
-
 
 /* Typescaling */
 h1 {
-  font-size: 5.613rem;
-  font-family: Montserrat;
+  font-size: 7.993rem;
+  font-family: Itim;
 }
 h2 {
-  font-size: 4.206rem;
-  font-family: Montserrat;
+  font-size: 5.653;
+  font-family: IrishGrover;
 }
 h3 {
-  font-size: 3.156rem;
-  font-family: Montserrat;
+  font-size: 3.998rem;
+  font-family: IrishGrover;
 }
 h4 {
-  font-size: 2.369rem;
-  font-family: Roboto;
+  font-size: 2.827rem;
+  font-family: IrishGrover;
 }
 h5 {
-  font-size: 1.775rem;
-  font-family: Roboto;
+  font-size: 1.999rem;
+  font-family: IrishGrover;
 }
 h6 {
 
-  font-size: 1.331rem;
-  font-family: Roboto;
+  font-size: 1.414rem;
+  font-family: IrishGrover;
 }
 p {
   font-size: 1rem;
-  font-family: Roboto;
+  font-family: IrishGrover;
 }
 small {
-  font-size: 0.75rem;
-  font-family: Roboto;
+  font-size: 0.708rem;
+  font-family: IrishGrover;
 }
 
 /* Variablen / Color */
 :root {
   --color1: #373F51;
-  --color2: #D8DBE2;
-  --color3: #61E786;
+  --color2: #61E786;
+  --color3: #F19A3E;
   --color4: #D81E5B;
-  --color5: #F19A3E;
-  --Color1Opa: ;
-  --realWhite: #fafafa;
+  --color5: #D8DBE2;
+  --Color6: #3F84E5;
 }
 
 /* Media - Queries */
 .container {
   width: 95%;
   padding-left: 1rem;
-  padding-right: 1;
+  padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
   border: 3px solid red;
