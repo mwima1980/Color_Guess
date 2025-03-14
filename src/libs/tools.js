@@ -13,7 +13,7 @@ export function GenerateRandomColor() {
 export function AddRandomColor(amount) {
   let roundColors = [];
   for(let i = 0; i < amount; i++) {
-    roundColors[i] = GenerateRandomColor();
+    roundColors.push(GenerateRandomColor());
   }
   
   return roundColors;
