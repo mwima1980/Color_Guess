@@ -37,17 +37,39 @@ export function CheckColors(hex1, hex2) {
   }
 }
 
-export function StartGame(hexcode, searchColor, buttonsColor, shuffleColors, buttonsContainer) {
+export function StartGame(hexcode, searchColor, buttonsColor, shuffleColors) {
   hexcode.innerText = searchColor;
+  let result = false;
   buttonsColor.forEach((element, index) => {
     element.style.backgroundColor = shuffleColors[index];
     element.dataset.hex = shuffleColors[index]; 
   })
+  
+}
+
+export function Points(buttonsContainer, searchColor, points, rounds, startButton) {
+  let result = false;
   buttonsContainer.addEventListener("click", event => {
     if(event.target.className !== "buttons") {
       return;
+    }else {
+      result = CheckColors(searchColor, event.target.dataset.hex);
     }
-    const result = CheckColors(searchColor, event.target.dataset.hex);
-    console.log(result);
+    if(result) {
+      let point = Number.parseInt(points.innerText);
+      point += 1;
+      points.innerText = point;
+      let round = Number.parseInt(rounds.innerText);
+      round += 1;
+      rounds.innerText = round;
+    }
+    else {
+      let check = confirm("Du hast verloren!");
+      if(check || !check) {
+        startButton.disabled = false;
+      }
+      
+    }
   })
+  
 }
