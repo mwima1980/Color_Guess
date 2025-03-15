@@ -124,6 +124,7 @@ body {
           height: 8rem;
           border-radius: 1.25rem;
           background-color: var(--color5);
+          cursor: pointer;
         }
       }
     }

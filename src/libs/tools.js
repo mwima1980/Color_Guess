@@ -25,5 +25,12 @@ export function Shuffle(colorList) {
     [colorList[i], colorList[rndIndex]] = [colorList[rndIndex],colorList[i]]
   }
   return colorList;
+}
 
+export function checkColors(hex1, hex2) {
+  if(hex1 === hex2) {
+    return true
+  }else {
+    return false;
+  }
 }
