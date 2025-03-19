@@ -1,32 +1,44 @@
-"using strict"
+"using strict";
 
-export function RandomColor() {
-  let hexCode = "#";
-  const chars ="0123456789ABCDEF";
+export const buttons = document.querySelectorAll(".buttons");
+export const hexCode = document.querySelector("#hexcode");
+export let searchedColor = null;
+export let fillColors = [];
+export let mixedArray = [];
+
+export function prepareGame() {
+  searchedColor = GenerateRandomColor();
+  fillColors = FillRoundColors(11);
+  fillColors.push(searchedColor);
+  mixedArray = Shuffle(fillColors);
+  SetGame();
+}
+
+export function GenerateRandomColor() {
+  let hexCode ="#";
+  const chars = "0123456789ABCDEF";
   for(let i = 0; i < 6; i++) {
-    const index = Math.floor(Math.random() * 16);
-    hexCode += chars[index];
-  }  
-
+    let randIndex = Math.floor(Math.random() * 16);
+    hexCode += chars[randIndex];
+  }
   return hexCode;
 }
 
-export function AddColors(amount) {
-  const colors = [];
+export function FillRoundColors(amount) {
+  const array = [];
   for(let i = 0; i < amount; i++) {
-    colors.push(RandomColor());
+    let hexCode = GenerateRandomColor();
+    array.push(hexCode);
   }
-
-  return colors;
+  return array;
 }
 
-export function Shuffle(array = []) {
+export function Shuffle(array) {
   for(let i = array.length - 1; i > 0; i--) {
-    const index = Math.floor(Math.random() * (i + 1));
-    [array[i], array[index]] = [array[index], array[i]];
+    const rndIndex = Math.floor(Math.random() * (i + 1));
+    [array[i], array[rndIndex]] = [array[rndIndex], array[i]];
   }
-
-  return array;
+  return array
 }
 
 export function CheckColors(hex1, hex2) {
@@ -37,39 +49,11 @@ export function CheckColors(hex1, hex2) {
   }
 }
 
-export function StartGame(hexcode, searchColor, buttonsColor, shuffleColors) {
-  hexcode.innerText = searchColor;
-  let result = false;
-  buttonsColor.forEach((element, index) => {
-    element.style.backgroundColor = shuffleColors[index];
-    element.dataset.hex = shuffleColors[index]; 
-  })
-  
+export function SetGame(innerText, colorCode) {
+  hexCode.innerText = innerText || searchedColor;
+  buttons.forEach((element, index) => {
+    element.style.backgroundColor = colorCode || mixedArray[index];
+    element.dataset.hex = mixedArray[index];
+  });
 }
 
-export function Points(buttonsContainer, searchColor, points, rounds, startButton) {
-  let result = false;
-  buttonsContainer.addEventListener("click", event => {
-    if(event.target.className !== "buttons") {
-      return;
-    }else {
-      result = CheckColors(searchColor, event.target.dataset.hex);
-    }
-    if(result) {
-      let point = Number.parseInt(points.innerText);
-      point += 1;
-      points.innerText = point;
-      let round = Number.parseInt(rounds.innerText);
-      round += 1;
-      rounds.innerText = round;
-    }
-    else {
-      let check = confirm("Du hast verloren!");
-      if(check || !check) {
-        startButton.disabled = false;
-      }
-      
-    }
-  })
-  
-}
