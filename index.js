@@ -1,21 +1,5 @@
-"using strict";
+import { startGameBtn, showScoring, toggleGame } from "./src/libs/tools.js";
 
-// Import
-import {
-  CheckColors,
-  prepareGame,
-  searchedColor,
-  hexCode,
-  buttonsContainer,
-  startGame,
-  ColorBoxEvent
-} from "./src/libs/tools.js";
+showScoring();
 
-// Game Start
-startGame.addEventListener("click", (event) => {
-  prepareGame();
-  startGame.disabled = true;
-  buttonsContainer.addEventListener("click", ColorBoxEvent);
-});
-
-
+startGameBtn.addEventListener("click", toggleGame);
